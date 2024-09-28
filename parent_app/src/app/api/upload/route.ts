@@ -1,8 +1,9 @@
-import { NextResponse } from 'next/server';
-import fs from 'fs';
+
+// app/api/save-event/route.ts
+import { NextRequest, NextResponse } from 'next/server';
+import fs from 'fs/promises';
 import path from 'path';
 
-// CORS middleware
 const setHeaders = (response: Response) => {
   response.headers.set('Access-Control-Allow-Origin', '*'); // Allow all origins
   response.headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS'); // Allow specific methods
@@ -10,14 +11,14 @@ const setHeaders = (response: Response) => {
   return response;
 };
 
-export async function POST(request: Request) {
+export async function POST(req: NextRequest) {
   try {
 
       // Handle preflight OPTIONS request
-    if (request.method === 'OPTIONS') {
+    if (req.method === 'OPTIONS') {
       return setHeaders(NextResponse.json({}));
     }
-    const data = await request.json();
+    const data = await req.json();
     console.log(data);
     const { img } = data;
 
@@ -29,7 +30,7 @@ export async function POST(request: Request) {
     const imagePath = path.join(process.cwd(), 'public', 'uploads', `image-${Date.now()}.png`);
 
     // Save the image to the filesystem
-    fs.writeFileSync(imagePath, buffer);
+    fs.writeFile(imagePath, buffer);
 
     // Construct the image URL
     const imageUrl = `/uploads/image-${Date.now()}.png`;
@@ -40,4 +41,3 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Failed to process the request' }, { status: 400 });
   }
 }
-
