@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     const buffer = Buffer.from(base64Data, 'base64');
 
     // Define the path to save the image
-    const imagePath = path.join(process.cwd(), 'public', 'uploads', `image-${Date.now()}.png`);
+    const imagePath = path.join('tmp', 'public', 'uploads', `image-${Date.now()}.png`);
 
     // Save the image to the filesystem
     await fs.writeFile(imagePath, buffer);
