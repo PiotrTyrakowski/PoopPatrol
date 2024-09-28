@@ -45,11 +45,11 @@ const HomePage = () => {
 
         {/* Recommended Article Section */}
         <a className="col-span-1 bg-white rounded-[1rem] shadow-md flex flex-col items-center h-[12rem] justify-between" href={"https://centrumrespo.pl/dzieci/dieta-dla-dzieci-jadlospis/"}>
-          <p className="text-xl text-black border-b-2 w-full p-2 pl-4">Dzienna Porada</p>
+          <p className="text-xl text-black border-b-2 w-full p-2 pl-4">Przykładowa dieta</p>
 
           <div className="flex flex-col items-center justify-center flex-1">
             <span className="text-[4.5rem] leading-none">🥗</span>
-            <p className="text-center text-black mt-2">Przykładowa dieta</p>
+            <p className="text-center text-black mt-2"></p>
           </div>
         </a>
 
@@ -77,20 +77,16 @@ const HomePage = () => {
 
 
 
-      </div>
+      </div >
         {/* Bottom Navigation */}
-        <div className="sticky bottom-0 left-0 right-0 bg-white py-4 flex justify-around border-none">
+        <div className="sticky bottom-0 left-0 right-0 bg-white py-4 flex justify-around border border-gray-400 ">
           <a className="text-center text-pink-500">
-            <span className="block">🏠</span>
+            <span className="block text-[2rem]">🏠</span>
             <span className="text-xs">Home</span>
           </a>
           <a className="text-center text-pink-500">
-            <span className="block">🏠</span>
-            <span className="text-xs">Home</span>
-          </a>
-          <a className="text-center text-pink-500">
-            <span className="block">🛍️</span>
-            <span className="text-xs">Products</span>
+            <span className="block text-[2rem]">📅️</span>
+            <span className="text-xs">Poop history</span>
           </a>
         </div>
       </div>
