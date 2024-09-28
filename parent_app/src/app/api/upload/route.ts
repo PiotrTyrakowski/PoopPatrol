@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     const imagePath = path.join(process.cwd(), 'public', 'uploads', `image-${Date.now()}.png`);
 
     // Save the image to the filesystem
-    fs.writeFile(imagePath, buffer);
+    await fs.writeFile(imagePath, buffer);
 
     // Construct the image URL
     const imageUrl = `/uploads/image-${Date.now()}.png`;
