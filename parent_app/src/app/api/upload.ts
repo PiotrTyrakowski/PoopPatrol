@@ -2,6 +2,14 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+// CORS middleware
+const setHeaders = (response: Response) => {
+  response.headers.set('Access-Control-Allow-Origin', '*'); // Allow all origins
+  response.headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS'); // Allow specific methods
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type'); // Allow specific headers
+  return response;
+};
+
 export async function POST(request: Request) {
   try {
     const data = await request.json();
