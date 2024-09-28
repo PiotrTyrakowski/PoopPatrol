@@ -12,6 +12,11 @@ const setHeaders = (response: Response) => {
 
 export async function POST(request: Request) {
   try {
+
+      // Handle preflight OPTIONS request
+    if (request.method === 'OPTIONS') {
+      return setHeaders(NextResponse.json({}));
+    }
     const data = await request.json();
     const { img } = data;
 
