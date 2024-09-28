@@ -18,6 +18,7 @@ export async function POST(request: Request) {
       return setHeaders(NextResponse.json({}));
     }
     const data = await request.json();
+    console.log(data);
     const { img } = data;
 
     // Decode the base64 image
