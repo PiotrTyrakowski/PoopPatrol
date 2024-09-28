@@ -2,12 +2,17 @@
 'use client'
 import { useEffect, useState } from 'react';
 import Card from '../../components/Card';
+import { convertISOToDateTime } from '@/utils/dateTimeConverter';
 
 type ImageData = {
   _id: string;
   buffer: string; // Base64-encoded string
   submittedAt: string;
+  weight: string; //weight --
+  face: string; // 1 if happy face, 0 if unhappy face
 };
+
+
 
 const ImageGallery = () => {
   const [images, setImages] = useState<ImageData[]>([]);
