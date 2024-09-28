@@ -17,7 +17,7 @@ const HomePage = () => {
           <p className=" text-xl font-bold text-gray-400 ">{formattedDate}</p>
           <p className=" text-4xl font-bold text-gray-800 mb-4">Podsumowanie</p>
         </div>
-        <div className="my-auto rounded-[5rem] h-[3.25rem] w-[3.25rem] bg-[#A55D49] text-xl text-white text-center flex items-center justify-center">
+        <div className="my-auto rounded-[4.5rem] h-[3.25rem] w-[3.25rem] bg-[#A55D49] text-xl text-white text-center flex items-center justify-center">
           WF
         </div>
 
@@ -28,28 +28,28 @@ const HomePage = () => {
 
         {/* Poop Icon and Number */}
         <div className="col-span-2 flex flex-row gap-x-2 items-center justify-center bg-white p-2 rounded-[1rem] shadow-md h-[16rem]">
-          <h1 className="text-[15rem] font-bold">1</h1>
-          <span className="text-[10rem]">💩</span>
+          <h1 className="text-[15rem] text-black font-bold">1</h1>
+          <span className="text-[10rem] flex items-center justify-center">💩</span>
         </div>
 
         {/* Recommended Article Section */}
-        <div className="col-span-1 bg-white  rounded-[1rem] shadow-md flex flex-col items-center h-[12rem]">
+        <div className="col-span-1 bg-white rounded-[1rem] shadow-md flex flex-col items-center h-[12rem]">
           <p className="text-xl text-black border-b-2 w-full p-2 pl-4 ">Dzienna Porada</p>
-          <div className="">
-            <span className="text-center text-[5rem]">🍎</span>
+          <div className="flex flex-col items-center justify-center flex-1">
+            <span className="text-[4.5rem]">🍎</span>
             <p className="text-center text-black p-0">Zwiększ błonnik </p>
           </div>
-
         </div>
 
 
-        {/* Recommended Article Section */}
-        <a className="col-span-1 bg-white rounded-[1rem] shadow-md flex flex-col items-center h-[12rem]" href={"https://centrumrespo.pl/dzieci/dieta-dla-dzieci-jadlospis/"}>
-          <p className="text-xl text-black border-b-2 w-full p-2 pl-4 ">Dzienna Porada</p>
 
-          <div className="">
-            <span className="text-center text-[5rem] mx-auto">🥗</span>
-            <p className="text-center text-black">Przykładowa dieta</p>
+        {/* Recommended Article Section */}
+        <a className="col-span-1 bg-white rounded-[1rem] shadow-md flex flex-col items-center h-[12rem] justify-between" href={"https://centrumrespo.pl/dzieci/dieta-dla-dzieci-jadlospis/"}>
+          <p className="text-xl text-black border-b-2 w-full p-2 pl-4">Dzienna Porada</p>
+
+          <div className="flex flex-col items-center justify-center flex-1">
+            <span className="text-[4.5rem] leading-none">🥗</span>
+            <p className="text-center text-black mt-2">Przykładowa dieta</p>
           </div>
         </a>
 
