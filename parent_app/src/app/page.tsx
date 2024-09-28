@@ -12,11 +12,13 @@ const HomePage = () => {
 
     <div className=" bg-gray-100 p-4">
       {/* Container */}
-      <div>
-        <div className="flex-row">
+      <div className="flex justify-between">
+        <div>
           <p className=" text-xl font-bold text-gray-400 ">{formattedDate}</p>
           <p className=" text-4xl font-bold text-gray-800 mb-4">Podsumowanie</p>
-          <div className="rounded-xl"></div>
+        </div>
+        <div className="my-auto rounded-[5rem] h-[3.25rem] w-[3.25rem] bg-[#A55D49] text-xl text-white text-center flex items-center justify-center">
+          WF
         </div>
 
       </div>
@@ -31,16 +33,24 @@ const HomePage = () => {
         </div>
 
         {/* Recommended Article Section */}
-        <div className="col-span-1 bg-white p-6 rounded-[1rem] shadow-md flex flex-col items-center h-[12rem]">
-          <p className="text-center text-black">Zwiększ błonnik </p>
-          <span className="text-[6rem]">🍎</span>
+        <div className="col-span-1 bg-white  rounded-[1rem] shadow-md flex flex-col items-center h-[12rem]">
+          <p className="text-xl text-black border-b-2 w-full p-2 pl-4 ">Dzienna Porada</p>
+          <div className="">
+            <span className="text-center text-[5rem]">🍎</span>
+            <p className="text-center text-black p-0">Zwiększ błonnik </p>
+          </div>
+
         </div>
 
 
         {/* Recommended Article Section */}
-        <a className="col-span-1 bg-white p-6 rounded-[1rem] shadow-md flex flex-col items-center h-[12rem]" href={"https://centrumrespo.pl/dzieci/dieta-dla-dzieci-jadlospis/"}>
-          <p className="text-center text-black">Przykładowa dieta</p>
-          <span className="text-[6rem]">🥗</span>
+        <a className="col-span-1 bg-white rounded-[1rem] shadow-md flex flex-col items-center h-[12rem]" href={"https://centrumrespo.pl/dzieci/dieta-dla-dzieci-jadlospis/"}>
+          <p className="text-xl text-black border-b-2 w-full p-2 pl-4 ">Dzienna Porada</p>
+
+          <div className="">
+            <span className="text-center text-[5rem] mx-auto">🥗</span>
+            <p className="text-center text-black">Przykładowa dieta</p>
+          </div>
         </a>
 
 
