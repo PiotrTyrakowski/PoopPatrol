@@ -2,8 +2,7 @@
 // app/api/save-event/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { MongoClient } from 'mongodb';
-import fs from 'fs/promises';
-import path from 'path';
+
 
 const uri = process.env.MONGODB_URI || "";
 
@@ -35,8 +34,7 @@ export async function POST(req: NextRequest) {
     const base64Data = img.replace(/^data:image\/\w+;base64,/, '');
     const buffer = Buffer.from(base64Data, 'base64');
 
-    let client;
-    client = new MongoClient(uri);
+    const client = new MongoClient(uri);
     await client.connect();
     console.log("Connected successfully to MongoDB");
 
@@ -45,7 +43,8 @@ export async function POST(req: NextRequest) {
     
     const submissions = database.collection("images");
 
-    const result = await submissions.insertOne({
+    //const result = 
+    await submissions.insertOne({
       buffer,
       submittedAt: new Date(),
     });
