@@ -1,12 +1,12 @@
 import smile from '../icons/smile.svg';
 import sad from '../icons/sad.svg';
 
-const Card = ({ image, waga, godzina }) => {
+const Card = ({ image, waga, godzina, data }) => {
     return ( <>
     
       <div className="bg-white rounded-lg p-4 mb-4 shadow-md items-center" style={{ width: '350px', height: '150px' }}>
         <div>
-            <p className="text-black">10.05.2024</p>
+            <p className="text-black">{data}</p>
         </div>
         <div className="w-full h-full flex">
             {/* Left side: Image */}

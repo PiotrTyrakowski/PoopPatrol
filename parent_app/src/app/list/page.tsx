@@ -2,7 +2,9 @@
 'use client'
 import { useEffect, useState } from 'react';
 import Card from '../../components/Card';
-import { convertISOToDateTime } from '@/utils/dateTimeConverter';
+import { convertISOToTime } from '@/utils/dateTimeConverter';
+import { convertISOToDate } from '@/utils/dateTimeConverter';
+
 
 type ImageData = {
   _id: string;
@@ -53,7 +55,7 @@ const ImageGallery = () => {
           </li> 
         ))} */}
         {images.map((image) => (
-          <Card image={image} waga={image.weight} godzina={convertISOToDateTime(image.submittedAt)} />
+          <Card image={image} waga={image.weight} godzina={convertISOToTime(image.submittedAt)} data={convertISOToDate(image.submittedAt)} />
         ))}
       </ul>
     </div>
