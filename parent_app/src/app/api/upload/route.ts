@@ -1,8 +1,16 @@
 
 // app/api/save-event/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import { MongoClient } from 'mongodb';
+
+
+const uri = process.env.MONGODB_URI || "";
+
+if (uri == "") {
+  throw new Error('Please define the MONGODB_URI environment variable');
+}
+
+
 
 const setHeaders = (response: Response) => {
   response.headers.set('Access-Control-Allow-Origin', '*'); // Allow all origins
@@ -26,16 +34,32 @@ export async function POST(req: NextRequest) {
     const base64Data = img.replace(/^data:image\/\w+;base64,/, '');
     const buffer = Buffer.from(base64Data, 'base64');
 
+    const client = new MongoClient(uri);
+    await client.connect();
+    console.log("Connected successfully to MongoDB");
+
+    const database = client.db('poop_patrol');
+
+    
+    const submissions = database.collection("images");
+
+    //const result = 
+    await submissions.insertOne({
+      buffer,
+      submittedAt: new Date(),
+    });
+
+
     // Define the path to save the image
-    const imagePath = path.join('tmp', `image-${Date.now()}.png`);
+    // const imagePath = path.join('/tmp', `image-${Date.now()}.png`);
 
     // Save the image to the filesystem
-    await fs.writeFile(imagePath, buffer);
+    // await fs.writeFile(imagePath, buffer);
 
     // Construct the image URL
-    const imageUrl = `/uploads/image-${Date.now()}.png`;
+    // const imageUrl = `/uploads/image-${Date.now()}.png`;
 
-    return NextResponse.json({ message: 'Image received successfully', img: imageUrl }, { status: 200 });
+    return NextResponse.json({ message: 'Image received successfully' }, { status: 201 });
   } catch (error) {
     console.error('Error processing the request:', error); // Log the error
     return NextResponse.json({ error: 'Failed to process the request' }, { status: 400 });
