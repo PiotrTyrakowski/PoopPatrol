@@ -61,7 +61,7 @@ const ImageGallery = () => {
             waga={image.weight} 
             godzina={convertISOToTime(image.submittedAt)} 
             data={convertISOToDate(image.submittedAt)} 
-            face={'1'} 
+            face={image.face} 
             />
         ))}
       </ul>
