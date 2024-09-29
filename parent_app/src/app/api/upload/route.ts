@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
     await submissions.insertOne({
       buffer,
       submittedAt: new Date(),
-      weight: 'baton weight hardcoded',
+      weight: '49',
       face: 0,
     });
 
