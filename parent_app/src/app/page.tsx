@@ -105,8 +105,6 @@ const HomePage = () => {
                 ]}
                 width={400} // Dostosowanie szerokości wykresu
                 height={275} // Dostosowanie wysokości wykresu
-                borderRadius={10}
-
             />
           </div>
         </div>
