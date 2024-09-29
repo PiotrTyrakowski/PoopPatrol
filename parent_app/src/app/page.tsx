@@ -70,6 +70,7 @@ const HomePage = () => {
                     scaleType: 'band', // Ustawienie typu "band" dla osi X
                   },
                 ]}
+                tooltip={{trigger: 'none'}}
                 series={[
                   {
                     id: 'auto-generated-id-0', // Dodanie identyfikatora do serii danych
@@ -105,13 +106,11 @@ const HomePage = () => {
                 ]}
                 width={400} // Dostosowanie szerokości wykresu
                 height={275} // Dostosowanie wysokości wykresu
+                tooltip={{trigger: 'none'}}
             />
           </div>
         </div>
       </section>
-
-
-
 
       </div >
         {/* Bottom Navigation */}
