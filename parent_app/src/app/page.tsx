@@ -1,5 +1,8 @@
 import React from "react";
 import { format } from 'date-fns';
+import { LineChart } from '@mui/x-charts/LineChart';
+import {BarChart} from "@mui/x-charts";
+
 
 
 const HomePage = () => {
@@ -54,22 +57,57 @@ const HomePage = () => {
         </a>
 
 
-
         {/* Weight Chart */}
-        <div className="col-span-2 bg-white p-6 rounded-[1rem] shadow-md">
-          <h2 className="text-sm text-gray-600 mb-2">Waga</h2>
-          <div className="h-32 w-full bg-blue-200 flex items-center justify-center">
-            {/* Replace with actual chart */}
-            <p>Waga (Chart)</p>
+
+        <div className="col-span-2 bg-white rounded-[1rem] shadow-md h-72">
+          <p className="text-xl text-black border-b-2 w-full p-2 pl-4">Liczba kupek</p>
+          <div className="h-36 w-full flex items-center justify-center mt-8">
+            <BarChart
+                xAxis={[
+                  {
+                    id: 'defaultized-x-axis-0', // Definiowanie ID osi
+                    data: ['pon', 'wt', 'śr', 'czw',  'pt', 'sob', 'ndz'],
+                    scaleType: 'band', // Ustawienie typu "band" dla osi X
+                  },
+                ]}
+                series={[
+                  {
+                    id: 'auto-generated-id-0', // Dodanie identyfikatora do serii danych
+                    data: [2, 0, 2, 5, 2, 3, 1],
+                    color: 'rgb(172,88,75)', // Brązowy kolor dla słupków
+                  },
+                ]}
+                width={400} // Dostosowanie szerokości wykresu
+                height={250} // Dostosowanie wysokości wykresu
+            />
           </div>
         </div>
-      {/* </div> */}
 
-        <div className="col-span-2 bg-white p-6 rounded-[1rem] shadow-md">
-          <h2 className="text-sm text-gray-600 mb-2">Waga</h2>
-          <div className="h-32 w-full bg-blue-200 flex items-center justify-center">
-            {/* Replace with actual chart */}
-            <p>Waga (Chart)</p>
+
+        <div className="col-span-2 bg-white rounded-[1rem] shadow-md h-72 mb-6" >
+          <p className="text-xl text-black border-b-2 w-full p-2 pl-4">Waga[mg]</p>
+          <div className="h-36 w-full flex items-center justify-center mt-8">
+            <LineChart
+                xAxis={[
+                  {
+                    data: ['pon', 'wt', 'śr', 'czw', 'pt', 'sob', 'ndz'],
+                    scaleType: 'point', // Dodanie skali dla osi X
+                  },
+                ]}
+                series={[
+                  {
+                    curve: 'natural',
+                    data: [200, 0, 225, 450, 150, 290, 200], // Dopasowana liczba punktów do osi X (7 wartości)
+                    area: true,
+                    baseline: 'min',
+                    color: 'rgba(250,117,45,0.51)', // Kolor dla linii i obszaru
+                  },
+                ]}
+                width={400} // Dostosowanie szerokości wykresu
+                height={275} // Dostosowanie wysokości wykresu
+                borderRadius={10}
+
+            />
           </div>
         </div>
       </section>
