@@ -24,7 +24,7 @@ const Card = ({ image, weight, hour, date, face }) => {
         }}
         className="bg-white rounded-lg p-4 mb-4 shadow-md items-center" style={{ width: '350px', height: '150px' }}>
         <div>
-            <p className="text-black border-b-2 text-xl pl-4">{date}</p>
+            <p className="text-black border-b-2 text-xl text-left pl-2">{date}</p>
         </div>
         <div className="w-full h-full flex">
             {/* Left side: Image */}
