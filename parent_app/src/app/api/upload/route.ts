@@ -47,6 +47,8 @@ export async function POST(req: NextRequest) {
     await submissions.insertOne({
       buffer,
       submittedAt: new Date(),
+      weight: 'baton weight hardcoded',
+      face: 0,
     });
 
 
