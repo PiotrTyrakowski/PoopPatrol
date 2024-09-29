@@ -55,7 +55,14 @@ const ImageGallery = () => {
           </li> 
         ))} */}
         {images.map((image) => (
-          <Card image={image} waga={image.weight} godzina={convertISOToTime(image.submittedAt)} data={convertISOToDate(image.submittedAt)} />
+          <Card 
+            key={image._id}
+            image={image} 
+            waga={image.weight} 
+            godzina={convertISOToTime(image.submittedAt)} 
+            data={convertISOToDate(image.submittedAt)} 
+            face={'1'} 
+            />
         ))}
       </ul>
     </div>
