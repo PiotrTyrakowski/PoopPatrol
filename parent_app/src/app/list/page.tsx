@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Card from '../../components/Card';
 import { convertISOToTime } from '@/utils/dateTimeConverter';
 import { convertISOToDate } from '@/utils/dateTimeConverter';
+import Navbar from '../../components/Navbar';
 
 
 type ImageData = {
@@ -25,6 +26,12 @@ const ImageGallery = () => {
       try {
         const response = await fetch('/api/get-images');
         const data = await response.json();
+
+        data.sort((a: ImageData, b: ImageData) => {
+          return new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime();
+        });
+
+
         setImages(data);
       } catch (error) {
         console.error('Error fetching images:', error);
@@ -41,19 +48,11 @@ const ImageGallery = () => {
   }
 
   return (
+    <div>
     <div className='min-h-screen bg-gray-100 p-4'>
-      <h1 className="text-black">Image Gallery</h1>
+      {/* <h1 className="text-black">Image Gallery</h1> */}
+      <p className=" text-4xl font-bold text-gray-800 mb-4">Image Gallery</p>
       <ul style={{ listStyleType: 'none', padding: 0 }}>
-        {/* {images.map((image) => (
-          <li key={image._id} style={{ marginBottom: '20px' }}>
-            <img
-              src={`data:image/png;base64,${image.buffer}`}
-              alt="Submitted"
-              style={{ width: '200px', height: '200px', objectFit: 'cover' }}
-            />
-            <p>Submitted at: {new Date(image.submittedAt).toLocaleString()}</p>
-          </li> 
-        ))} */}
         {images.map((image) => (
           <Card 
             key={image._id}
@@ -65,6 +64,8 @@ const ImageGallery = () => {
             />
         ))}
       </ul>
+    </div>
+    <Navbar />
     </div>
   );
 };

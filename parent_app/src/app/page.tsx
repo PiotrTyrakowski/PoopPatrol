@@ -2,6 +2,7 @@ import React from "react";
 import { format } from 'date-fns';
 import { LineChart } from '@mui/x-charts/LineChart';
 import {BarChart} from "@mui/x-charts";
+import Navbar from "../components/Navbar";
 
 
 
@@ -70,7 +71,7 @@ const HomePage = () => {
                     scaleType: 'band', // Ustawienie typu "band" dla osi X
                   },
                 ]}
-                tooltip={{trigger: 'none'}}
+                // tooltip={{trigger: 'none'}}
                 series={[
                   {
                     id: 'auto-generated-id-0', // Dodanie identyfikatora do serii danych
@@ -106,7 +107,7 @@ const HomePage = () => {
                 ]}
                 width={400} // Dostosowanie szerokości wykresu
                 height={275} // Dostosowanie wysokości wykresu
-                tooltip={{trigger: 'none'}}
+                // tooltip={{trigger: 'none'}}
             />
           </div>
         </div>
@@ -114,7 +115,7 @@ const HomePage = () => {
 
       </div >
         {/* Bottom Navigation */}
-        <div className="sticky bottom-0 left-0 right-0 bg-white py-4 flex justify-around border border-gray-400 ">
+        {/* <div className="sticky bottom-0 left-0 right-0 bg-white py-4 flex justify-around border border-gray-400 ">
           <a className="text-center text-pink-500">
             <span className="block text-[2rem]">🏠</span>
             <span className="text-xs">Home</span>
@@ -123,7 +124,8 @@ const HomePage = () => {
             <span className="block text-[2rem]">📅️</span>
             <span className="text-xs">Poop history</span>
           </a>
-        </div>
+        </div>         */}
+        <Navbar />
       </div>
 
   );
