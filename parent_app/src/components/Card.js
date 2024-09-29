@@ -22,8 +22,7 @@ const Card = ({ image, waga, godzina, data, face }) => {
             <div className="w-2/3 h-full pl-4 flex flex-col justify-center">
             <p className="text-black">Waga: {waga} g</p>
             <p className="text-black">Godzina: {godzina}</p>
-            console.log(`data:image/png;base64,${image.buffer}`);
-            console.log(face);
+            {/* console.log(`data:image/png;base64,${image.buffer}`); */}
             </div>
         </div>
       </div>
