@@ -42,7 +42,8 @@ const ImageGallery = () => {
 
   return (
     <div className='min-h-screen bg-gray-100 p-4'>
-      <h1 className="text-black">Image Gallery</h1>
+      {/* <h1 className="text-black">Image Gallery</h1> */}
+      <p className=" text-4xl font-bold text-gray-800 mb-4">Image Gallery</p>
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         {/* {images.map((image) => (
           <li key={image._id} style={{ marginBottom: '20px' }}>
@@ -58,9 +59,9 @@ const ImageGallery = () => {
           <Card 
             key={image._id}
             image={image} 
-            waga={image.weight} 
-            godzina={convertISOToTime(image.submittedAt)} 
-            data={convertISOToDate(image.submittedAt)} 
+            weight={image.weight} 
+            hour={convertISOToTime(image.submittedAt)} 
+            date={convertISOToDate(image.submittedAt)} 
             face={'1'} 
             />
         ))}
