@@ -57,9 +57,9 @@ const ImageGallery = () => {
           <Card 
             key={image._id}
             image={image} 
-            waga={image.weight} 
-            godzina={convertISOToTime(image.submittedAt)} 
-            data={convertISOToDate(image.submittedAt)} 
+            weight={image.weight} 
+            hour={convertISOToTime(image.submittedAt)} 
+            date={convertISOToDate(image.submittedAt)} 
             face={image.face} 
             />
         ))}
