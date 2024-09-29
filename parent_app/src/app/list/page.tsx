@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Card from '../../components/Card';
 import { convertISOToTime } from '@/utils/dateTimeConverter';
 import { convertISOToDate } from '@/utils/dateTimeConverter';
+import Navbar from '../../components/Navbar';
 
 
 type ImageData = {
@@ -41,6 +42,7 @@ const ImageGallery = () => {
   }
 
   return (
+    <div>
     <div className='min-h-screen bg-gray-100 p-4'>
       {/* <h1 className="text-black">Image Gallery</h1> */}
       <p className=" text-4xl font-bold text-gray-800 mb-4">Image Gallery</p>
@@ -66,6 +68,8 @@ const ImageGallery = () => {
             />
         ))}
       </ul>
+    </div>
+    <Navbar />
     </div>
   );
 };
