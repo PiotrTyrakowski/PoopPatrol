@@ -20,7 +20,7 @@ const ImageGallery = () => {
   const [images, setImages] = useState<ImageData[]>([]);
   const [loading, setLoading] = useState(true);
 
-  //useEffect(() => {
+  useEffect(() => {
     const fetchImages = async () => {
       try {
         const response = await fetch('/api/get-images');
@@ -34,7 +34,7 @@ const ImageGallery = () => {
     };
 
     fetchImages();
- // }, []);
+  }, []);
 
   if (loading) {
     return <p className="text-black">Loading images...</p>;
